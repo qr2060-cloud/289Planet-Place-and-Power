@@ -42,27 +42,26 @@
 
     <h2>The question</h2>
     <p>
-      One sentence. It must be answerable, and it must have a "where" in it.
-      This week, that is the sentence you wrote in class:
-      at [site], [thing A] and [thing B] go together, because of [mechanism].
+      How does the terrain of my site in Sydney shape the movement of water across the site and its surrounding area?
     </p>
 
     <h2>The data</h2>
     <p>
-      Which layers you used in the Site Scanner, what years they are from, and
-      who made them. Then the part people skip: what is missing from them, and
-      what each layer is standing in for.
+     Elevation: I used Esri's World Elevation Terrain service, which provides a raster elevation model for Sydney. The Sydney coverage is based on the Australia_NSW_DTM5m dataset, with a 5.00m cell size. Vertical Datum is AHD. The provider is listed as DFSI, and the available dates are approximately 2008–2018. The vertical accuracy (LE90) is not stated in the available metadata.
+The 5 m cell size is important because each raster cell represents an area of approximately 25 m². Therefore, the terrain map can represent relatively larger changes in elevation, but features smaller than the cell size may be averaged or not represented clearly.
+Soil: For the soil part, I used SoilGrids to examine organic carbon density at a depth of 15–30 cm. The map represents a predicted soil property rather than direct measurements at every location. The spatial distribution therefore needs to be interpreted as a model-based prediction rather than a complete set of field observations.
     </p>
     <p>
       Write the proxy sentence here, once per indicator:
-      <em>I am using X to stand for Y, and it might fail because Z.</em>
+      <em>I am using the elevation model to stand for the shape of the terrain, and it might fail because the 5 m cell size may smooth or miss small features such as kerbs, drainage channels, and small embankments.
+           I am using slope derived from the elevation model to stand for how steep the terrain is, and it might fail because slope is calculated from the elevation grid and therefore depends on the 5 m cell size and the nine-cell calculation window.</em>
     </p>
 
     <h2>The method</h2>
     <p>
-      What you actually did, in enough detail that someone else could repeat
-      it. Which base layer, which overlay, roughly what zoom, and where you set
-      the opacity. If you chose a threshold or a year, say why you chose it.
+     I added the Terrain, Terrain – Slope Degrees, and Terrain – Slope Map layers to the ArcGIS map. The slope layer is derived from the elevation raster rather than directly measured by a slope sensor. It calculates slope from the elevation values of a cell and its surrounding cells using a nine-cell window. Therefore, the resulting slope is dependent on the resolution and assumptions of the underlying elevation model.
+I used different symbology to examine how the same terrain data could produce different visual arguments. The original Slope Map represents slope through several predefined classes, while I also created a second classification with five classes: 0–5°, 5–21°, 21–41°, 41–70°, and 70–90°. This classification makes broader differences in slope more visually apparent. The choice of the breaks is therefore part of the map's rendering rather than a change in the underlying elevation or slope data.
+For the soil layer, I selected organic carbon density and the 15–30 cm depth interval in SoilGrids. The soil map represents a model prediction based on environmental covariates and soil observations rather than a direct measurement at every pixel.
     </p>
 
     <!-- ============================================================
@@ -85,23 +84,21 @@
 
     <h2>What I found</h2>
     <p>
-      Plain language. What does the image actually support? Use at least three
-      of the ten words — pattern, distribution, density, clustering, proximity,
-      adjacency, connectivity, relationship, change, diffusion — and use them
-      correctly.
+      The terrain pattern suggests that surface material and water would generally move from the higher and more strongly sloping inland areas toward the lower coastal areas around Sydney, although the 5 m raster cannot show every small drainage feature.
+In the soil map, organic carbon density at 15–30 cm depth shows spatial variation across the mapped area, with areas of relatively higher and lower predicted values forming a visible spatial pattern. This is a prediction from SoilGrids rather than direct measurement at every location.
     </p>
 
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-        The honest part. What the image cannot support, what you had to assume,
-        and what would change your mind. Name the extent you chose, and say how
-        the answer would differ if you had zoomed out one step.
+        The 5 m cell size limits what this map can show. Features smaller than approximately one cell, such as small drainage channels, kerbs, road edges, and small embankments, may be averaged or omitted from the raster. Therefore, the map cannot by itself show the exact path that water takes through the site.
+The slope map also does not show whether a slope is structurally stable. Slope is derived from elevation, while stability would require additional information about materials, water pressure, vegetation, and other physical conditions.
+The elevation data also have limitations related to their metadata, including the stated or unstated vertical accuracy, vertical datum, and the dates of the underlying surveys. The dates of the elevation data should not automatically be interpreted as the dates when the current landscape or buildings were constructed.
+The soil layer has a different limitation: SoilGrids represents a prediction, not direct measurement at every location. Its uncertainty therefore matters when interpreting the spatial pattern.
+Finally, the rendering itself is not neutral. Changing the classification breaks can make certain slope differences more visually prominent. I therefore need to state the symbology and classification used rather than presenting the visual pattern as if it were simply the raw data
       </p>
       <p>
-        <strong>AI use:</strong> AI-assisted for [what], using [which tool].
-        I verified [how]. If you did not use AI, write "No AI tools were used
-        for this entry."
+        <strong>AI use:</strong>I used AI to help organize and edit my writing. 
       </p>
     </div>
 

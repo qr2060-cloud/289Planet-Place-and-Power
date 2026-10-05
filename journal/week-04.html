@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 03 · Qingrui Ren</title>
+<title>Week 04 · Qingrui Ren</title>
 
 <!-- Note the ../ — this page is inside the journal folder, so it has to
      look one level up to find the stylesheet. -->
@@ -27,12 +27,12 @@
 <article class="entry">
   <div class="wrap wrap-narrow">
 
-    <p class="kicker">Week 03 · September 2026</p>
+    <p class="kicker">Week 04 · October 2026</p>
 
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
          "Week 3 journal entry". -->
-    <h1>Sydney's Terrain-Slope and Soil</h1>
+    <h1>Sydney's Vegetation</h1>
 
     <!-- ============================================================
          The six parts. Every entry in this course has all six.
@@ -42,26 +42,21 @@
 
     <h2>The question</h2>
     <p>
-      How does the terrain of my site in Sydney shape the movement of water across the site and its surrounding area?
+      How do pattern, scale, and density of vegetation across my Sydney site affect what NDVI identifies as “green” space? I want to test whether areas that appear highly green at the landscape scale also represent places with substantial ecological habitat.
     </p>
 
     <h2>The data</h2>
     <p>
-     Elevation: I used Esri's World Elevation Terrain service, which provides a raster elevation model for Sydney. The Sydney coverage is based on the Australia_NSW_DTM5m dataset, with a 5.00m cell size. Vertical Datum is AHD. The provider is listed as DFSI, and the available dates are approximately 2008–2018. The vertical accuracy (LE90) is not stated in the available metadata.
-The 5 m cell size is important because each raster cell represents an area of approximately 25 m². Therefore, the terrain map can represent relatively larger changes in elevation, but features smaller than the cell size may be averaged or not represented clearly.
-Soil: For the soil part, I used SoilGrids to examine organic carbon density at a depth of 15–30 cm. The map represents a predicted soil property rather than direct measurements at every location. The spatial distribution therefore needs to be interpreted as a model-based prediction rather than a complete set of field observations.
+     I used Landsat Explorer with a Landsat 8 OLI/TIRS scene acquired on August 21, 2026. Each pixel is 30 m × 30 m (900 m²), and the scene has 1% cloud cover. The data are publicly available. I used NDVI (Normalized Difference Vegetation Index), calculated from Band 4 (red) and Band 5 (near-infrared). NDVI uses the contrast between vegetation absorbing red light and reflecting near-infrared light. 
     </p>
     <p>
       Write the proxy sentence here, once per indicator:
-      <em>I am using the elevation model to stand for the shape of the terrain, and it might fail because the 5 m cell size may smooth or miss small features such as kerbs, drainage channels, and small embankments.
-           I am using slope derived from the elevation model to stand for how steep the terrain is, and it might fail because slope is calculated from the elevation grid and therefore depends on the 5 m cell size and the nine-cell calculation window.</em>
+      <em> I am using NDVI to stand for the amount of living green vegetation, and it might fail because different kinds of vegetation and managed surfaces can produce similar index values.</em>
     </p>
 
     <h2>The method</h2>
     <p>
-     I added the Terrain, Terrain – Slope Degrees, and Terrain – Slope Map layers to the ArcGIS map. The slope layer is derived from the elevation raster rather than directly measured by a slope sensor. It calculates slope from the elevation values of a cell and its surrounding cells using a nine-cell window. Therefore, the resulting slope is dependent on the resolution and assumptions of the underlying elevation model.
-I used different symbology to examine how the same terrain data could produce different visual arguments. The original Slope Map represents slope through several predefined classes, while I also created a second classification with five classes: 0–5°, 5–21°, 21–41°, 41–70°, and 70–90°. This classification makes broader differences in slope more visually apparent. The choice of the breaks is therefore part of the map's rendering rather than a change in the underlying elevation or slope data.
-For the soil layer, I selected organic carbon density and the 15–30 cm depth interval in SoilGrids. The soil map represents a model prediction based on environmental covariates and soil observations rather than a direct measurement at every pixel.
+     I used the NDVI Raw rendering to obtain numerical values and NDVI Colorized to visualize the spatial pattern. I applied the tutorial’s 0.5 threshold, treating pixels with NDVI ≥ 0.5 as “green,” and also tested 0.4 and 0.6 to see whether changing the threshold improved the ecological interpretation. I used the colorized map to compare the pattern and density of green areas across Sydney.
     </p>
 
     
@@ -74,8 +69,7 @@ For the soil layer, I selected organic carbon density and the 15–30 cm depth i
 
     <h2>What I found</h2>
     <p>
-      The terrain pattern suggests that surface material and water would generally move from the higher and more strongly sloping inland areas toward the lower coastal areas around Sydney, although the 5 m raster cannot show every small drainage feature.
-In the soil map, organic carbon density at 15–30 cm depth shows spatial variation across the mapped area, with areas of relatively higher and lower predicted values forming a visible spatial pattern. This is a prediction from SoilGrids rather than direct measurement at every location.
+      My Part 0 prediction ranked Royal National Park first, Ku-ring-gai Chase National Park  second, and Sydney Olympic Garden third. My final NDVI results were broadly consistent with my expectation: Royal National Park = 0.85, Ku-ring-gai Chase National Park = 0.71, and Sydney Olympic Park = 0.40. The main difference is that the actual results included Ku-ring-gai Chase National Park and Sydney Olympic Park rather than the two Botanic Garden locations I predicted. This suggests that the broad ranking of greener versus less-green environments was more reliable than predicting the exact places.
     </p>
 
     <h2>What this does not show</h2>

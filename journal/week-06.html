@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 06 · Qingrui Ren</title>
 
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Your Name</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 06 · October 2026</p>
+
+    <!-- EDIT THIS: a title that says what you found, not what you did.
+         "The blocks that were built after the creek was filled" beats
+         "Week 3 journal entry". -->
+    <h1>Sydney's Land Cover</h1>
+
+    <!-- ============================================================
+         The six parts. Every entry in this course has all six.
+         Do not delete a heading — if a section is thin, that is
+         information too.
+         ============================================================ -->
+
+    <h2>The question</h2>
+    <p>
+How has land cover in the Sydney metropolitan region changed between 2017 and 2025, particularly through the expansion of built areas and changes in vegetation? What do these changes suggest about the distribution of urban development and natural land cover across the region, and who might benefit from or be affected by this change?    </p>
+
+    <h2>The data</h2>
+    <p>
+I used the Esri Sentinel-2 Land Use/Land Cover Time Series, produced by Esri and Impact Observatory. It provides annual land-cover classifications at a spatial resolution of 10 metres from 2017 to 2025. The map distinguishes nine classes, including Water, Trees, Crops, Built Area, Bare Ground, and Rangeland. The Sentinel-2 dataset is available under CC BY 4.0. I used the 2017, 2023, and 2025 maps to examine changes in Sydney's land-cover distribution.    <p>
+      Write the proxy sentence here, once per indicator:
+      <em> I am using the Sentinel-2 Built Area class to stand for urban development, and it might fail because the classifier's published class definition includes parks and golf courses in Built Area, so vegetated recreational spaces in Sydney may be classified as urban land rather than as green space.</em>
+    </p>
+
+    <h2>The method</h2>
+    <p>
+     Extent: I focused on the Sydney metropolitan region, including the urban centre, surrounding suburbs, and nearby vegetated areas.
+Scale: I used the same regional map extent for the 2017–2023 and 2017–2025 comparisons. I also examined central Sydney at a closer scale of approximately 1:37,795, with the map displaying 1 pixel = 10 metres.
+Rendering: I used the Swipe function to compare land-cover maps from different years.
+Instrument: The instrument was the Sentinel-2 land-cover classifier, which assigns pixels to predefined categories rather than directly measuring land use or ownership.
+I compared 2017 with 2025 and then switched the second date to 2023 to test whether the observed pattern remained consistent.
+ArcGIS app-state link: View my Sydney land-cover comparison (2017–2023)
+    </p>
+
+    
+    <figure>
+     <iframe width="700" height="600" allow="local-network-access; geolocation" title="Tutorial 4 · Water ·Qingrui Ren" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=26df51edead544188082ce6e7196e1f6&theme=light&bookmarks=true&heading=true&legend=true&share=true&scroll=false&basemaps=true&center=151.20695721400014,-33.86939648614189&scale=577790.554289" ></iframe>
+       Sydney's Land Cover
+     The evidence：
+The regional comparison shows that Built Area increased by 0.8% between 2017 and 2025, while Trees decreased by 0.1%, Crops decreased by 0.3%, and Rangeland decreased by 0.4%. Water increased by 0.1%. In the alternative comparison between 2017 and 2023, Built Area increased by 0.7%, while Trees decreased by 1.2%, Crops decreased by 0.3%, Rangeland increased by 0.7%, and Water increased by 0.1%.
+      </figcaption>
+    </figure>
+
+    <h2>What I found</h2>
+    <p>
+The clearest pattern is the increase in the area classified as Built Area between 2017 and 2025. The 2023 comparison also shows an increase in this category, suggesting that the direction of change is relatively consistent across the two comparisons. However, the changes in Trees and Rangeland differ between the two periods. This makes me cautious about interpreting every mapped change as a continuous real-world trend. The maps show a classification pattern, but they do not establish exactly where, why, or for whom development occurred.
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+One limitation is that a 10-metre land-cover classification cannot reliably distinguish every small feature or mixed surface. For example, a narrow strip of trees beside a road may occupy only part of a pixel and be classified differently depending on the surrounding surface. I am using the mapped Built Area class to stand for urban development, and it might fail because the classifier assigns pixels to predefined land-cover categories rather than directly identifying construction, land use, or changes in property ownership. Therefore, the comparison cannot by itself prove that new buildings replaced trees, identify the causes of development, or determine who benefited from it.      </p>
+      <p>
+        <strong>AI use:</strong> I used ChatGPT to help organize my observations and draft the journal in English. I checked the reported percentages and map characteristics against my screenshots. The interpretation remains limited to what the maps show and does not treat classification changes as independently verified ground conditions.
+
+      </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Qingrui Ren · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>

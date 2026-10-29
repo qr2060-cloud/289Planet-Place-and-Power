@@ -46,7 +46,13 @@ This journal explores the relationship between Australia's international trade a
     <h2>The data</h2>
     <p>
 I used two 2024 datasets from the Atlas of Economic Complexity: Australia's exports by destination and its exports by product. In the product dataset, iron ores and concentrates were the largest listed category, worth approximately US$74.24 billion, or 19.67% of the recorded total. Coal was the second-largest category. In the destination dataset, China was the largest destination, receiving approximately US$106.58 billion, equivalent to 36.36% of the recorded total. I also used Natural Earth's Admin 0 – Countries dataset, version 5.1.1, to provide country boundaries for the world map.
-      <em> I am using the Sentinel-2 Built Area class to stand for urban development, and it might fail because the classifier's published class definition includes parks and golf courses in Built Area, so vegetated recreational spaces in Sydney may be classified as urban land rather than as green space.</em>
+      <em> 1. Export by destination (gross export value): I am using each destination country's gross export value to stand for the economic importance of Australia's trade with that country, and it might fail because the value records trade destinations rather than the specific places where the exported goods were produced.
+
+2. Export by product: I am using the gross export value of iron ores and concentrates to stand for the economic importance of Australia's iron-ore industry, and it might fail because export value does not show the physical area occupied by mines or the environmental impacts of extraction.
+
+3. Natural Earth country boundaries: I am using country polygons to stand for the geographical units used to map Australia's export destinations, and it might fail because some trade destinations or territories may not correspond exactly to the countries represented by the boundary dataset.
+
+4. Sydney transport locations: I am using the locations of Port Botany, Sydney Airport, and Enfield Intermodal Logistics Centre to stand for Sydney's trade-related transport infrastructure, and it might fail because three selected locations cannot represent the full distribution or capacity of the city's freight and transport networks.</em>
     </p>
 
     <h2>The method</h2>

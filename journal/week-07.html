@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 07 · Qingrui Ren</title>
+
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Your Name</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 07 · October 2026</p>
+
+    <!-- EDIT THIS: a title that says what you found, not what you did.
+         "The blocks that were built after the creek was filled" beats
+         "Week 3 journal entry". -->
+    <h1>Sydney's Land Cover</h1>
+
+    <!-- ============================================================
+         The six parts. Every entry in this course has all six.
+         Do not delete a heading — if a section is thin, that is
+         information too.
+         ============================================================ -->
+
+    <h2>The question</h2>
+    <p>
+This journal explores the relationship between Australia's international trade and its physical geography. I focus on the scale and distribution of exports in 2024. My main question is: How can trade data help us understand Australia's global economic connections, and what can a map reveal—or conceal—about the physical places supporting these connections?
+    <h2>The data</h2>
+    <p>
+I used two 2024 datasets from the Atlas of Economic Complexity: Australia's exports by destination and its exports by product. In the product dataset, iron ores and concentrates were the largest listed category, worth approximately US$74.24 billion, or 19.67% of the recorded total. Coal was the second-largest category. In the destination dataset, China was the largest destination, receiving approximately US$106.58 billion, equivalent to 36.36% of the recorded total. I also used Natural Earth's Admin 0 – Countries dataset, version 5.1.1, to provide country boundaries for the world map.
+      <em> I am using the Sentinel-2 Built Area class to stand for urban development, and it might fail because the classifier's published class definition includes parks and golf courses in Built Area, so vegetated recreational spaces in Sydney may be classified as urban land rather than as green space.</em>
+    </p>
+
+    <h2>The method</h2>
+    <p>
+     I uploaded the destination CSV as a table and the Natural Earth country boundaries as a feature layer in ArcGIS Online. I then joined the destination data to the country polygons using country names and displayed exports_usd. with the “Counts and Amounts (color)” style. The resulting choropleth uses different shades of blue to represent different export-value ranges. I also imported a CSV containing three Sydney transport locations as a point layer: Port Botany, Sydney Airport, and Enfield Intermodal Logistics Centre.
+    </p>
+
+    
+    <figure>
+<iframe width="700" height="600" allow="local-network-access; geolocation" title="Sydney: from table to map" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=c70651c88f72495fbd1400e8503dedb4&theme=light&bookmarks=true&heading=true&legend=true&share=true&scroll=false&basemaps=true&center=21.09736284647257,-7.656523208698392&scale=147914381.897889" ></iframe>       Sydney's Land Cover
+     The evidence：
+The choropleth shows the geographical distribution of Australia's recorded export destinations. China appears in a dark shade, consistent with its large recorded export value. The Sydney point map identifies three different transport and logistics nodes: a seaport, an international airport, and an intermodal freight facility. Together, the maps connect a global pattern of trade with specific places involved in moving goods and people. However, the point map represents transport infrastructure, not the locations of Australia's mines.
+
+      </figcaption>
+    </figure>
+
+    <h2>What I found</h2>
+    <p>
+I am using national gross export value to stand for the geographical distribution of Australia's export-related economic activity, and it might fail because trade values are attributed to destination countries rather than to the specific mines, factories, ports, and transport networks responsible for producing and moving goods. Similarly, three Sydney transport locations cannot represent all of Australia's trade infrastructure. These maps reveal useful spatial patterns, but they do not show the complete physical supply chain or the land area occupied by export production.    <div class="limits">
+      <p>
+        <strong>AI use:</strong>  I used ChatGPT to help organize the journal and interpret the assignment requirements. I used my CSV data and ArcGIS maps to check the reported trade patterns and map setup. I will ensure that the final submission accurately reflects my own observations and includes the required class sentence and map captions.
+      </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Qingrui Ren · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
